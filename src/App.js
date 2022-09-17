@@ -1,12 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-
+const App = () => (
+    <div className="bg-primary overflow-hidden w-full">
+      Hello Houser
     </div>
-  );
-}
+)
 
 export default App;
