@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {close, logo, menu} from '../assets'
 import { navLinks } from '../constants'
 
 const Navbar = () => {
+
+  const [toggle, setToggle] = useState(false)
+
   return (
     <nav className='py-6 justify-between flex items-center w-full navbar'>
       <img src={logo} alt='hoobank' className='w-[124px] h-[32px]' />
@@ -17,6 +20,13 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      <div className='sm:hidden flex flex-1 items-center justify-end'>
+          <img src={toggle ? close : menu}
+          alt = 'menu'
+          className='w-[28px] h-[28px] object-contain'
+          onClick={() => setToggle((prev) => !prev)}></img>
+      </div>
     </nav>
   )
 }
